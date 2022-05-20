@@ -14,6 +14,18 @@ import java.util.List;
 
 @Entity
 public class Post {
+
+    @ManyToOne (fetch = FetchType.EAGER)
+    private Author author;
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
